@@ -1,0 +1,34 @@
+---
+title: tp-vychod-k5-min-hrubky
+format:
+  html:
+    code-fold: True
+    echo: False
+    html-math-method: katex
+---
+
+<p>&nbsp;</p>
+### Vstupné údaje
+
+```{python}
+inputs={
+  "membranova-stena": {
+    "pressure" : 10,
+    "temperature" : 300,
+    "material" : "12022",
+  },
+  "prehrievac": {
+    "pressure" : 10,
+    "temperature" : 300,
+    "material" : "15125",
+  }
+}
+```
+```{python}
+import pandas as pd
+
+# df = pd.DataFrame.from_dict(inputs, orient='index').reset_index(drop=True)
+df = pd.DataFrame.from_dict(inputs, orient='index')
+
+print(df.to_markdown(index=True))
+```
