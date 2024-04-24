@@ -110,11 +110,12 @@ display(Math(latex_output))
 
 Medza pevnosti
 ```{python}
-rm_12022=sy.var('R_{p02-12022}')
+rm_12022=sy.var('R_{m-12022}')
 rm_12022_values = 440
 latex_output = f"${rm_12022} = {rm_12022_values}$"
 display(Math(latex_output))
 ```
+
 ##### Medza pevnosti pri tečení (200 000 h)
 Teplotný rozsah
 ```{python}
@@ -126,7 +127,7 @@ display(Math(latex_output))
 
 Medza pevnosti pri tečení
 ```{python}
-rmt_12022=sy.var('R_{p02-12022}')
+rmt_12022=sy.var('R_{mt-12022}')
 rmt_12022_values = [145, 115, 89, 67, 48, 33.4, 24]
 latex_output = f"${rmt_12022} = {rmt_12022_values}$"
 display(Math(latex_output))
@@ -152,11 +153,12 @@ display(Math(latex_output))
 
 Medza pevnosti
 ```{python}
-rm_15128=sy.var('R_{p02-15128}')
+rm_15128=sy.var('R_{m-15128}')
 rm_15128_values = 490
 latex_output = f"${rm_15128} = {rm_15128_values}$"
 display(Math(latex_output))
 ```
+
 ##### Medza pevnosti pri tečení (200 000 h)
 Teplotný rozsah
 ```{python}
@@ -168,7 +170,7 @@ display(Math(latex_output))
 
 Medza pevnosti pri tečení
 ```{python}
-rmt_15128=sy.var('R_{p02-15128}')
+rmt_15128=sy.var('R_{mt-15128}')
 rmt_15128_values = [197, 151, 115, 87, 66, 50, 38]
 latex_output = f"${rmt_15128} = {rmt_15128_values}$"
 display(Math(latex_output))
