@@ -7,7 +7,6 @@ format:
     html-math-method: katex
 ---
 
-<p>&nbsp;</p>
 ### Vstupné údaje
 
 ```{python}
