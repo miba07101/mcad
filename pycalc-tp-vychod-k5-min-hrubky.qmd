@@ -1,11 +1,34 @@
 ---
 title: tp-vychod-k5-min-hrubky
+lang: sk
 format:
+  pdf: default
   html:
+    mainfont: Times New Roman
+    fontsize: 0.9em
     code-fold: True
     echo: False
     html-math-method: katex
 ---
+
+<!-- tabulka - typ grid -->
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | 19.8          |
+|                     +-------+-------+-------+
+|                     | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+
+: {.bordered}
+
+**Poznamka**: Vysledky ....
+
+
+{{< pagebreak >}}
 
 ### Vstupné údaje
 
@@ -70,14 +93,24 @@ inputs={
 }
 ```
 
+
+
 ```{python}
+#| label: tbl-inputs
+#| tbl-cap: Vstupné údaje
+#| tbl-cap-location: top
+
+from IPython.display import Markdown
+from tabulate import tabulate
 import pandas as pd
 
 # df = pd.DataFrame.from_dict(inputs, orient='index').reset_index(drop=True)
 df = pd.DataFrame.from_dict(inputs, orient='index')
 
-print(df.to_markdown(index=True))
+# print(df.to_markdown(index=True))
+Markdown(tabulate(df, headers="keys", tablefmt="github"))
 ```
+
 
 ### Materiálové vlastnosti
 
