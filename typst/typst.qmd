@@ -1,0 +1,117 @@
+---
+title: "TECHNICKÁ SPRÁVA"
+format:
+  typst:
+    keep-typ: true
+execute:
+  echo: false
+---
+
+# Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
+# Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
+
+
+```{=typst}
+#text(10pt)[
+#align(center+bottom)[
+#table(
+  columns: 5,
+  align: left,
+  rows: (auto, 15pt),
+  [*Riešiteľ:*], [*Meno, priezvisko, titul*], [*Funkcia*], [*Dátum*], [*Podpis*],
+  [], [Milan Baláž, Ing. PhD.],[výskumný pracovník], [30.04.2024],[],
+  [], [], [], [],[],
+  [], [], [], [],[],
+  [], [], [], [],[],
+  [], [], [], [],[],
+  [*Preveril:*], [Peter Pastier, Ing.], [vedúci odd. materiálov a laborátorií], [30.04.2024],[],
+  [*Schválil:*], [Peter Brziak, Ing. PhD.], [riaditeľ odd. materiálov a laborátorií], [30.04.2024],[],
+)
+]
+]
+```
+
+**Upozornenie:** Výsledky platia len pre objednaný predmet a rozsah.
+{{< pagebreak >}}
+
+
+# Vstupné údaje
+
+```{python}
+inputs={
+  "membranova-stena": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 315,
+    "material" : "12022",
+  },
+  "strop-ohniska": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 315,
+    "material" : "12022",
+  },
+  "strop-medzitahu": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 305,
+    "material" : "12022",
+  },
+  "zadna-stena-2-tah": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 260,
+    "material" : "12022",
+  },
+  "p-l-stena-2-tah": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 260,
+    "material" : "12022",
+  },
+  "vystupny-prehrievac": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 525,
+    "material" : "15128",
+  },
+  "salavy-prehrievac": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 480,
+    "material" : "15128",
+  },
+  "mreza": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 325,
+    "material" : "12022",
+  },
+}
+```
+
+
+
+```{python}
+#| label: tbl-inputs
+#| tbl-cap: Vstupné údaje
+#| tbl-cap-location: top
+
+from IPython.display import Markdown
+from tabulate import tabulate
+import pandas as pd
+
+# df = pd.DataFrame.from_dict(inputs, orient='index').reset_index(drop=True)
+df = pd.DataFrame.from_dict(inputs, orient='index')
+
+# print(df.to_markdown(index=True))
+Markdown(tabulate(df, headers="keys", tablefmt="github"))
+```

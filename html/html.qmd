@@ -1,0 +1,28 @@
+---
+title: "Pokus"
+format:
+  html:
+    code-fold: True
+    echo: False
+    html-math-method: katex
+    number-sections: True
+    page-layout: article
+    css: styles.css
+    include-in-header:
+      - text: "ahojky"
+---
+<!-- ::: {.column-page style="text-align: center; background: red; height: 100%"} -->
+::: {.column-page}
+ahoj
+:::
+{{< pagebreak >}}
+::: {.columns}
+::: {.column width="200" align="center"}
+## pokus1 {.unnumbered style="text-align: center; background: yellow"}
+pokuspokus
+:::
+::: {.column width="400"}
+## pokus1.2
+
+:::
+:::
