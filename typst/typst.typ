@@ -235,7 +235,6 @@
   }
 }
 #show: doc => article(
-  title: [TECHNICKÁ SPRÁVA],
   toc_title: [Table of contents],
   toc_depth: 3,
   cols: 1,
@@ -243,106 +242,21 @@
 )
 
 
-= Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
-<posúdenie-stavu-materiálu-jednotlivých-tlakových-častí-kotla-k5-v-teplárni-východ-bratislava.>
-= Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
-<príloha-4---informatívny-pevnostný-výpočet-hrúbok-stien-tlakových-častí-kotla-k5.>
-#text(10pt)[
-#align(center+bottom)[
-#table(
-  columns: 5,
-  align: left,
-  rows: (auto, 15pt),
-  [*Riešiteľ:*], [*Meno, priezvisko, titul*], [*Funkcia*], [*Dátum*], [*Podpis*],
-  [], [Milan Baláž, Ing. PhD.],[výskumný pracovník], [30.04.2024],[],
-  [], [], [], [],[],
-  [], [], [], [],[],
-  [], [], [], [],[],
-  [], [], [], [],[],
-  [*Preveril:*], [Peter Pastier, Ing.], [vedúci odd. materiálov a laborátorií], [30.04.2024],[],
-  [*Schválil:*], [Peter Brziak, Ing. PhD.], [riaditeľ odd. materiálov a laborátorií], [30.04.2024],[],
-)
-]
-]
-#strong[Upozornenie:] Výsledky platia len pre objednaný predmet a rozsah.
+#set page(fill: yellow, margin: (left: 2in))
 
-#pagebreak()
-= Vstupné údaje
-<vstupné-údaje>
-#block[
-#figure([
-#block[
-#figure(
-align(center)[#table(
-  columns: 6,
-  align: (col, row) => (auto,auto,auto,auto,auto,auto,).at(col),
-  inset: 6pt,
-  [], [od], [t\_nom], [p\_op], [temp\_op], [material],
-  [membranova-stena],
-  [57],
-  [5],
-  [10],
-  [315],
-  [12022],
-  [strop-ohniska],
-  [57],
-  [5],
-  [10],
-  [315],
-  [12022],
-  [strop-medzitahu],
-  [57],
-  [5],
-  [10],
-  [305],
-  [12022],
-  [zadna-stena-2-tah],
-  [57],
-  [5],
-  [10],
-  [260],
-  [12022],
-  [p-l-stena-2-tah],
-  [57],
-  [5],
-  [10],
-  [260],
-  [12022],
-  [vystupny-prehrievac],
-  [57],
-  [5],
-  [10],
-  [525],
-  [15128],
-  [salavy-prehrievac],
-  [57],
-  [5],
-  [10],
-  [480],
-  [15128],
-  [mreza],
-  [57],
-  [5],
-  [10],
-  [325],
-  [12022],
-)]
-)
+#line(start: (0%, 5%), end: (8.5in, 5%), stroke: (thickness: 2pt))
 
+#align(horizon + left)[
+  #text(size: 24pt, [Offensive Security Exploitation \ Expert Exam Report])
+
+  OSEE Exam Report
+
+  student\@youraddress.com, OSID: XXXX
 ]
-], caption: figure.caption(
-position: top, 
-[
-Vstupné údaje
-]), 
-kind: "quarto-float-tbl", 
-supplement: "Table", 
-numbering: "1", 
-)
-<tbl-inputs>
 
 
-]
+
+#align(bottom + left)[#datetime.today().display()]
 
 
 

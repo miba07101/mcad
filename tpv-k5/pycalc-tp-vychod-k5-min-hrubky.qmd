@@ -1,14 +1,14 @@
 ---
 title: tp-vychod-k5-min-hrubky
 lang: sk
+execute:
+  echo: false
+  code-fold: True
 format:
    html:
      mainfont: Times New Roman
      fontsize: 0.9em
-     code-fold: True
-     echo: False
      html-math-method: katex
-   pdf: default
 ---
 
 
