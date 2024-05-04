@@ -10,6 +10,7 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
+
 #let article(
   title: none,
   authors: none,
@@ -18,7 +19,7 @@
   cols: 1,
   margin: (x: 2.5cm, y: 3.5cm),
   paper: "a4",
-  lang: "sk",
+  lang: "es",
   region: "SK",
   font: (),
   fontsize: 12pt,
@@ -30,15 +31,28 @@
     paper: paper,
     margin: margin,
     numbering: "1",
-    header: [
-    #box(
-      image("logo-vuz-ts.png", height: 90%)
-    )
-    #h(1fr)
-    #counter(page).display(
-        "1/1",
-        both: true,
-      )
+    header: locate(
+    loc => if [#loc.page()] == [1] {
+        box(
+          image("logo-vuz-ts.png", height: 90%)
+        )
+        h(1fr)
+        counter(page).display(
+            "1/1",
+            both: true,
+          )
+      }
+      else {
+          [Z.č.: 222/2003/ME]
+        h(1fr)
+        [List: ]
+        counter(page).display(
+            "1/1",
+            both: true,
+            )
+        line(length: 100%, stroke: (thickness: 1pt))
+          }
+
 
 
 
@@ -49,10 +63,17 @@
           rect(height: 100%, width: 100%, fill: blue)[fixed]
       )*/
 
-    ],
+    ),
+    footer: locate(
+    loc => if [#loc.page()] != [1] {
+        line(length: 100%, stroke: (thickness: 1pt))
+        align(center)[© VÚZ]
+      }
+    )
   )
   set par(justify: true)
-  set text(lang: lang,
+  set text(
+           lang: lang,
            region: region,
            font: font,
            size: fontsize)
@@ -78,6 +99,9 @@
           ]
       )
     )
+
+
+
   }
 
   if date != none {
