@@ -1,88 +1,16 @@
 ---
 title: VUZ template
-number-sections: true
+# number-sections: true
+lang: "fr"
+date: 2022-06-01
+preveril: Peter Pastier, Ing.
+authors:
+  - name: Milan Baláž, Ing, PhD.
 format:
   t-vuz-typst: default
 ---
 
-# Introduction
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-
-## More Information
-
-You can learn more about creating custom Typst templates here:
-
-<https://quarto.org/docs/prerelease/1.4/typst.html#custom-formats>
-
-```{=typst}
-#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx
-
-#align(center+bottom)[
-#figure(
-tablex(
-  columns: 4,
-  align: center + horizon,
-  auto-vlines: false,
-  caption: [Probe results for design A],
-
-  // indicate the first two rows are the header
-  // (in case we need to eventually
-  // enable repeating the header across pages)
-  header-rows: 2,
-
-  // color the last column's cells
-  // based on the written number
-  map-cells: cell => {
-    if cell.x == 3 and cell.y > 1 {
-      cell.content = {
-        let value = int(cell.content.text)
-        let text-color = if value < 10 {
-          red.lighten(30%)
-        } else if value < 15 {
-          yellow.darken(13%)
-        } else {
-          green
-        }
-        set text(text-color)
-        strong(cell.content)
-      }
-    }
-    cell
-  },
-
-  /* --- header --- */
-  rowspanx(2)[*Username*], colspanx(2)[*Data*], (), rowspanx(2)[*Score*],
-  (),                 [*Location*], [*Height*], (),
-  /* -------------- */
-
-  [John], [Second St.], [180 cm], [5],
-  [Wally], [Third Av.], [160 cm], [10],
-  [Jason], [Some St.], [150 cm], [15],
-  [Robert], [123 Av.], [190 cm], [20],
-  [Other], [Unknown St.], [170 cm], [25],
-),
-  kind: table,
-  caption: [milan],
-)
-]
-
-#figure(
-table(
-  columns: 3,
-  gutter: 3pt,
-  [Name], [Age], [Strength],
-  [Hannes], [36], [Grace],
-  [Irma], [50], [Resourcefulness],
-  [Vikram], [49], [Perseverance],
-),
-  kind: table,
-  caption: [hello],
-)
-```
-
-
-{{< pagebreak >}}
 
 
 # Vstupné údaje

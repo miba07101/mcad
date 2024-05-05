@@ -27,6 +27,11 @@ $endif$
 $endfor$
     ),
 $endif$
+
+$if(preveril)$
+  preveril: [$preveril$],
+$endif$
+
 $if(date)$
   date: [$date$],
 $endif$

@@ -10,10 +10,12 @@
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
+#import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx
 
 #let article(
   title: none,
   authors: none,
+  preveril: none,
   date: none,
   abstract: none,
   cols: 1,
@@ -21,29 +23,29 @@
   paper: "a4",
   lang: "es",
   region: "SK",
-  font: (),
+  font: "Arial",
   fontsize: 12pt,
-  sectionnumbering: none,
+  sectionnumbering: "1.1",
   toc: false,
   doc,
 ) = {
   set page(
-    paper: paper,
-    margin: margin,
-    numbering: "1",
-    header: locate(
-    loc => if [#loc.page()] == [1] {
+      paper: paper,
+      margin: margin,
+      numbering: "1",
+      header: locate(
+        loc => if [#loc.page()] == [1] {
         box(
-          image("logo-vuz-ts.png", height: 90%)
-        )
+            image("logo-vuz-ts.png", height: 90%)
+           )
         h(1fr)
         counter(page).display(
             "1/1",
             both: true,
-          )
-      }
-      else {
-          [Z.č.: 222/2003/ME]
+            )
+        }
+        else {
+        [Z.č.: 222/2003/ME]
         h(1fr)
         [List: ]
         counter(page).display(
@@ -51,39 +53,87 @@
             both: true,
             )
         line(length: 100%, stroke: (thickness: 1pt))
-          }
+        }
 
-
-
-
-    /*  #grid(
-        columns: 2,
-        gutter: 5pt,
-          image("logo-vuz-ts.png", width: 100%),
-          rect(height: 100%, width: 100%, fill: blue)[fixed]
-      )*/
-
-    ),
+  ),
     footer: locate(
-    loc => if [#loc.page()] != [1] {
+        loc => if [#loc.page()] != [1] {
         line(length: 100%, stroke: (thickness: 1pt))
         align(center)[© VÚZ]
-      }
-    )
-  )
-  set par(justify: true)
-  set text(
-           lang: lang,
-           region: region,
-           font: font,
-           size: fontsize)
-  set heading(numbering: sectionnumbering)
+        }
+        )
+      )
+      set par(justify: true)
+      set text(
+          lang: lang,
+          region: region,
+          font: font,
+          size: fontsize)
+      set heading(numbering: sectionnumbering)
 
-  if title != none {
-    align(center)[#block(inset: 2em)[
-      #text(weight: "bold", size: 1.5em)[#title]
-    ]]
-  }
+      align(center)[#block(inset: 2em)[
+#upper(text(weight: "medium", size: 2.5em)[technická správa])
+
+#text(weight: "bold", size: 1.5em)[#title]
+      ]]
+
+        align(center)[#block(inset: 2em)[
+          #grid(
+              columns: 2,
+              column-gutter: 1em,
+              text(weight: "bold")[Objednávateľ:],
+              align(left)[#text()[
+              Zákazník\
+              Adresa\
+              meno
+              ]
+
+              ]
+              )
+        ]]
+
+    block(inset: 2em)[
+    #text(weight: "bold")[Evidenčné č. zákazky:] #h(0.5em) 222/2003/ME
+    ]
+
+    block(inset: 2em)[
+    #text(weight: "bold")[Bratislava, #date]
+    ]
+
+    block(inset: 2em)[
+    #text(weight: "bold")[Číslo a dátum objednávky:] #h(0.5em) #date
+    ]
+
+
+    // block(inset: 2em)[
+    // #text(weight: "bold",
+    //   ..authors.map(author => [#author.name])
+    //   )
+    // ]
+
+// let pok = authors.map(author => [#author.name])
+align(center+bottom)[
+#tablex(
+  columns: 5,
+  rows: 18pt,
+  /* --- header --- */
+ rowspanx(6)[*Riešiteľ:*], [*Meno, Priezvisko, titul*], [*Funkcia*], [*Dátum*], [*Podpis*],
+  /* -------------- */
+  ..authors.map(author => [#author.name]), [výskumný pracovník], [30.05.2024], [],
+  [], [], [], [], [],
+  [], [], [], [], [],
+  [], [], [], [], [],
+  [], [*Preveril:*], [#preveril], [výskumný pracovník], [30.05.2024], [],
+  [*Schválil:*], [Milan Baláž, Ing., PhD.], [výskumný pracovník], [30.05.2024], [],
+)
+]
+
+
+
+
+
+        pagebreak()
+
 
   if authors != none {
     let count = authors.len()
@@ -99,16 +149,8 @@
           ]
       )
     )
-
-
-
   }
 
-  if date != none {
-    align(center)[#block(inset: 1em)[
-      #date
-    ]]
-  }
 
   if abstract != none {
     block(inset: 2em)[
@@ -130,4 +172,8 @@
   } else {
     columns(cols, doc)
   }
+
+
 }
+
+
