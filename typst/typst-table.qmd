@@ -6,11 +6,11 @@ format:
 
 
 
-
 ```{=typst}
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx
 #align(center+bottom)[
-#tablex(
+#figure(
+tablex(
   columns: 4,
   align: center + horizon,
   auto-vlines: false,
@@ -50,6 +50,9 @@ format:
   [Jason], [Some St.], [150 cm], [15],
   [Robert], [123 Av.], [190 cm], [20],
   [Other], [Unknown St.], [170 cm], [25],
+),
+caption: "Table caption",
+kind: table
 )
 ]
 ```

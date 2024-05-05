@@ -35,14 +35,26 @@
       numbering: "1",
       header: locate(
         loc => if [#loc.page()] == [1] {
-        box(
-            image("logo-vuz-ts.png", height: 90%)
-           )
-        h(1fr)
-        counter(page).display(
+        place(horizon + left,
+        image("./_extensions/t-vuz/images/logo-vuz-ts.png", height: 90%),
+        )
+        place(horizon + right)[List:
+        #counter(page).display(
             "1/1",
             both: true,
-            )
+            )]
+
+
+
+
+        // box(
+        //     image("logo-vuz-ts.png", height: 90%)
+        //    )
+        // h(1fr)
+        // counter(page).display(
+        //     "1/1",
+        //     both: true,
+        //     )
         }
         else {
         [Z.č.: 222/2003/ME]

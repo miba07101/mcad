@@ -240,40 +240,12 @@
   cols: 1,
   doc,
 )
-#import "@preview/fontawesome:0.1.0": *
 
 
-#block[
-this is texr
-
-]
-#block[
-#callout(
-body: 
-[
-Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
-
-]
-, 
-title: 
-[
-Note
-]
-, 
-background_color: 
-rgb("#dae6fb")
-, 
-icon_color: 
-rgb("#0758E5")
-, 
-icon: 
-fa-info()
-, 
-)
-]
 #import "@preview/tablex:0.0.8": tablex, rowspanx, colspanx
 #align(center+bottom)[
-#tablex(
+#figure(
+tablex(
   columns: 4,
   align: center + horizon,
   auto-vlines: false,
@@ -313,6 +285,9 @@ fa-info()
   [Jason], [Some St.], [150 cm], [15],
   [Robert], [123 Av.], [190 cm], [20],
   [Other], [Unknown St.], [170 cm], [25],
+),
+caption: "Table caption",
+kind: table
 )
 ]
 
