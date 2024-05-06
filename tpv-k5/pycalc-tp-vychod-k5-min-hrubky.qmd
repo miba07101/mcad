@@ -9,6 +9,8 @@ format:
      mainfont: Times New Roman
      fontsize: 0.9em
      html-math-method: katex
+   # pdf: default
+   # typst: default
 ---
 
 

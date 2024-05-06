@@ -1,17 +1,41 @@
 ---
-title: VUZ template
-# number-sections: true
-lang: "fr"
-date: 2022-06-01
-preveril: Peter Pastier, Ing.
-authors:
-  - name: Milan Baláž, Ing, PhD.
+report-type: technická správa
+title: Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
+subtitle: Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
+objednavatel:
+    meno: MH Teplárenský holding, a.s.
+    adresa:
+      ulica: Turbínová 3
+      mesto: Bratislava
+      zip: 831 04
+riesitel:
+  meno: Milan Baláž, Ing. PhD.
+  funkcia: výskumný pracovník
+  datum: 06.05.2024
+riesitel2:
+  meno: Hlavoun, Ing.
+  funkcia: žopkáč
+  datum: 06.05.2024
+preveril:
+  meno: Peter Pastier, Ing.
+  funkcia: vedúci odd. mat. a lab.
+  datum: 07.05.2024
+schvalil:
+  meno: Peter Brziak, Ing., PhD.
+  funkcia: riaditeľ odd. mat. a lab.
+  datum: 08.05.2024
+zakazka:
+  cislo: 222/2205, ME 069
+objednavka:
+  cislo: 5500008081
+  datum: 14.03.2024
 format:
   t-vuz-typst: default
+toc: true
+execute:
+  echo: false
+  code-fold: True
 ---
-
-
-
 
 # Vstupné údaje
 
@@ -79,9 +103,6 @@ inputs={
 
 
 ```{python}
-#| label: tbl-inputs
-#| tbl-cap: Vstupné údaje
-#| tbl-cap-location: top
 
 from IPython.display import Markdown
 from tabulate import tabulate
@@ -190,3 +211,4 @@ rmt_15128_values = [197, 151, 115, 87, 66, 50, 38]
 latex_output = f"${rmt_15128} = {rmt_15128_values}$"
 display(Math(latex_output))
 ```
+
