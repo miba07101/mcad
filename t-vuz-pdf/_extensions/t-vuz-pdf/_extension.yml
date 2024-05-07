@@ -1,0 +1,16 @@
+title: T-vuz-pdf
+author: miba07101
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    pdf:
+      documentclass: article
+      toc: true
+      papersize: a4
+      fontsize: 12pt
+      include-in-header: in-header.tex
+      template-partials:
+        - "partials/before-body.tex"
+        - "partials/titlepage.tex"
+

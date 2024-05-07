@@ -4,6 +4,77 @@ format:
     keep-typ: true
 ---
 
+```{=typst}
+#let title(content) = {
+	set align(center)
+	rect(
+		width: 100%,
+		[#content],
+	)
+}
+
+#let header(content) = {
+	set align(center)
+	rect(
+		width: 100%,
+		[#content],
+	)
+}
+
+#let cell(content) = {
+	set align(left)
+	rect(
+		width: 100%,
+		stroke: (left: 1pt, right: 1pt),
+		[#content]
+	)
+}
+
+#let formatrow(r) = {
+	(cell(r.at(0)), cell(r.at(1)), cell(r.at(2)))
+}
+
+#let table(values) = {
+	rect(
+		stroke: (bottom: 1pt, top: 1pt),
+		inset: 0pt,
+		outset: 0pt,
+		grid(
+			columns: (auto),
+			rows: (auto),
+			// table title
+			grid(
+				columns: (100%),
+				title(values.at(0)),
+			),
+			// header row
+			grid(
+				columns: (1fr, 1fr, 1fr),
+				..values.at(1).map(header),
+			),
+			// content row
+			grid(
+				columns: (1fr, 1fr, 1fr),
+				..values.slice(2).map(formatrow).flatten()
+			),
+		)
+	)
+}
+
+#let values = (
+	("Country List"),
+	("Country Name or Area Name", "ISO ALPHA 2 Code", "ISO ALPHA 3"),
+	("Afghanistan", "AF", "AFT"),
+	("Aland Islands", "AX", "ALA"),
+	("Albania", "AL", "ALB"),
+	("Algeria", "DZ", "DZA"),
+	("American Samoa", "AS", "ASM"),
+	("Andorra", "AD", "AND"),
+	("Angola", "AP", "AGO"),
+)
+
+#table(values)
+```
 
 
 ```{=typst}
@@ -52,7 +123,7 @@ tablex(
   [Other], [Unknown St.], [170 cm], [25],
 ),
 caption: "Table caption",
-kind: table
+//kind: table
 )
 ]
 ```

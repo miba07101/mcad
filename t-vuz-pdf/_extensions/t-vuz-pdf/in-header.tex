@@ -1,0 +1,24 @@
+
+
+\usepackage{geometry} % for page geometry
+\usepackage{graphicx} % for images
+\usepackage{fancyhdr} % for header and footer
+\usepackage{lastpage} % for header and footer
+\usepackage{hyphenat} % don't hyphenat titles
+
+%% Set page size with a wider right margin
+\geometry{a4paper, total={170mm,257mm}, left=25mm, top=25mm, bottom=25mm, right=25mm}
+
+%% Header and Footer
+\pagestyle{fancy}
+
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{Zákazka c.: $zakazka$ }
+\fancyhead[R]{List: \thepage/\pageref{LastPage}}
+\fancyfoot{} % clear all footer fields
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{VÚZ}
+
+
+

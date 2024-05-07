@@ -121,11 +121,40 @@
   )
 
   // tabulka riesitelov
+  show figure: it => {
+  // toto nastavuje nejakym sposobom poziciu tabuliek, ale berie ich ako Figure
+    show: pad.with(y: 2em, x: 5em)
+  // toto nastavuje popis
+    set align(center)
+
+    // v(24.5pt, weak: true)
+
+    // Display the figure's body.
+    it.body
+
+    // Display the figure's caption.
+    if it.has("caption") {
+      // Gap defaults to 17pt.
+      v(if it.has("gap") { it.gap } else { 17pt }, weak: true)
+      smallcaps[Figure]
+      if it.numbering != none {
+        [ #counter(figure).display(it.numbering)]
+      }
+      [. ]
+      it.caption
+    }
+
+    v(15pt, weak: true)
+  }
+
+
+
   align(center + bottom)[
   #table(
     columns: (1fr, auto, auto, 1fr, 1fr),
     rows: 18pt,
     align: left,
+    stroke: (1pt + black),
     // align:(col, row) =>
     // if (row == 0 and col in (0, 1, 2, 3, 4)) or (row in (6, 7) and col == 0) or (col == 3) {
     //   center
