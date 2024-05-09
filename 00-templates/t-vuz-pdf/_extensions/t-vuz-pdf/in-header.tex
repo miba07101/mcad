@@ -1,0 +1,56 @@
+% sources
+% https://github.com/AaronGullickson/aog-article-quarto/blob/main/_extensions/aog-article/header.tex
+% https://github.com/nmfs-opensci/quarto_titlepages_v1/tree/main/titlepages/vline
+
+% \usepackage{fontspec}
+% \setmainfont{Arial}
+
+% ------------------
+% Tables
+% ------------------
+\usepackage{multirow}
+\usepackage{array}
+
+% ------------------
+% Page geometry
+% ------------------
+\usepackage{geometry} % for page geometry
+\geometry{a4paper, total={170mm,257mm}, left=25mm, top=30mm, bottom=30mm, right=25mm}
+
+% ------------------
+% Section headings
+% ------------------
+% \usepackage{titlesec}
+% \titleformat*{\section}{\Large\sffamily\bfseries\raggedright}
+% \titleformat*{\subsection}{\large\sffamily\bfseries\raggedright}
+% \titleformat*{\subsubsection}{\normalsize\sffamily\bfseries\raggedright}
+% \titleformat*{\paragraph}{\small\sffamily\bfseries\raggedright}
+
+%\titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}
+% Starred version removes indentation in following paragraph
+% \titlespacing*{\section}{0em}{2em}{0.1em}
+% \titlespacing*{\subsection}{0em}{1.25em}{0.1em}
+% \titlespacing*{\subsubsection}{0em}{0.75em}{0em}
+
+% ------------------
+% Headers/Footers
+% ------------------
+\usepackage{graphicx} % for images
+\usepackage{lastpage} % page counting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L,R]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{© VÚZ}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{titlepage}{%
+  \fancyfoot[C]{}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ------------------
+% Captions
+% ------------------
+\usepackage[labelfont=bf,labelsep=period]{caption}
+\captionsetup[figure]{font=footnotesize,justification=raggedright,singlelinecheck=false,format=hang}

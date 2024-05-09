@@ -1,15 +1,42 @@
 ---
-title: The SocioEconomic Aspects of Stock Assessments
-subtitle: Recommendations for Increasing Assessment Accuracy and Improving Management Advice
-lang: sk
+report-type: technická správa
+title: Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
+subtitle: Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
+objednavatel:
+    meno: MH Teplárenský holding, a.s.
+    adresa:
+      ulica: Turbínová 3
+      mesto: Bratislava
+      zip: 831 04
+riesitel:
+  meno: Milan Baláž, Ing. PhD.
+  funkcia: výskumný pracovník
+  datum: 06.05.2024
+riesitel2:
+  meno: Vierka alias Big Head, PhDr.
+  funkcia: žopkáč účtovník
+  datum: 06.05.2024
+preveril:
+  meno: Peter Pastier, Ing.
+  funkcia: vedúci odd. mat. a lab.
+  datum: 07.05.2024
+schvalil:
+  meno: Peter Brziak, Ing., PhD.
+  funkcia: riaditeľ odd. mat. a lab.
+  datum: 08.05.2024
+zakazka:
+  cislo: 222/2205, ME 069
+objednavka:
+  cislo: 5500008081
+  datum: 14.03.2024
 format:
   # pdf:
     # toc: true
   t-vuz-pdf-pdf: default
-zakazka: ME123
 execute:
   echo: false
   code-fold: True
+lang: sk
 ---
 
 ## Introduction

@@ -6,9 +6,9 @@ contributes:
   formats:
     pdf:
       documentclass: article
-      toc: true
       papersize: a4
       fontsize: 12pt
+      block-headings: false # to deal with titlesec problems
       include-in-header: in-header.tex
       template-partials:
         - "partials/before-body.tex"

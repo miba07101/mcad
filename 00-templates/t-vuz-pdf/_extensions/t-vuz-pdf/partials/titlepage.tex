@@ -1,0 +1,68 @@
+% This is where the command to make a title page is issued
+% This is a combination of Pandoc templating and LaTeX
+% Pandoc templating https://pandoc.org/MANUAL.html#templates
+% See the README for help
+
+
+\begin{titlepage}
+\thispagestyle{titlepage}
+\fancyhead[L]{\includegraphics[width=100mm,height=25mm]{./_extensions/t-vuz-pdf/images/logo-vuz-ts.png}}
+\fancyhead[R]{List: \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}%
+
+
+\vspace*{6em}
+\begin{center}
+\textrm{\huge\textbf{\uppercase{$report-type$}}}
+\end{center}
+
+
+\vspace*{4em}
+\begin{center}
+{\Large\bfseries{$title$}}\\[1\baselineskip]
+$if(subtitle)${\large $subtitle$}\\[2\baselineskip]$endif$
+\end{center}
+
+\begin{table}[h!] % positioning table right here
+\hspace*{2em}
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+\begin{tabular}{ r l }
+   \textbf{Objednávateľ:} & \textbf{$objednavatel.meno$} \\
+  \multirow{2}{*}{}  & {$objednavatel.adresa.ulica$} \\
+                    & {$objednavatel.adresa.zip$ $objednavatel.adresa.mesto$} \\
+\end{tabular}
+\end{table}
+
+\vspace*{1em}
+{\hspace*{2em}\bfseries{Evidenčné č. zákazky: $zakazka.cislo$}}\\[1\baselineskip]
+{\hspace*{2em}\textbf{Bratislava, $schvalil.datum$}}\\[1\baselineskip]
+
+  {\hspace*{0em}\textbf{Číslo a dátum objednávky: }\textnormal{objednávka č. $objednavka.cislo$, $objednavka.datum$}}
+
+% Please add the following required packages to your document preamble:
+\vspace*{2em}
+\begin{table}[h!] % positioning table to the page bottom
+\centering
+% \setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.25} % Default value: 1
+  \begin{tabular}{|l|l|l|l|l|}
+\hline
+   \textbf{Riešiteľ:} & \textbf{Meno, priezvisko, titul} & \textbf{Funkcia}     & \textbf{Dátum}     & \textbf{Podpis} \\ \hline
+\multirow{5}{*}{}  & $riesitel.meno$                     & $riesitel.funkcia$   & $riesitel.datum$   &                 \\ \cline{2-5}
+                   & $riesitel2.meno$                    & $riesitel2.funkcia$  & $riesitel2.datum$  &                 \\ \cline{2-5}
+                   & $riesitel3.meno$                    & $riesitel3.funkcia$  & $riesitel3.datum$  &                 \\ \cline{2-5}
+                   & $riesitel4.meno$                    & $riesitel4.funkcia$  & $riesitel4.datum$  &                 \\ \cline{2-5}
+                   & $riesitel5.meno$                    & $riesitel5.funkcia$  & $riesitel5.datum$  &                 \\ \hline
+\textbf{Preveril:} & $preveril.meno$                     & $preveril.funkcia$   & $preveril.datum$   &                 \\ \hline
+\textbf{Schválil:} & $schvalil.meno$                     & $schvalil.funkcia$   & $schvalil.datum$   &                 \\ \hline
+\end{tabular}
+\end{table}
+
+
+  {Upozornenie: Výsledky platia len pre objednaný predmet a rozsah.}
+
+
+\end{titlepage}
+
+
