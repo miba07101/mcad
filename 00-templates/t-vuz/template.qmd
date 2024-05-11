@@ -3,11 +3,11 @@ report-type: technická správa
 title: Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
 subtitle: Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
 objednavatel:
-    meno: MH Teplárenský holding, a.s.
-    adresa:
-      ulica: Turbínová 3
-      mesto: Bratislava
-      zip: 831 04
+  meno: MH Teplárenský holding, a.s.
+  adresa:
+    ulica: Turbínová 3
+    mesto: Bratislava
+    zip: 831 04
 riesitel:
   meno: Milan Baláž, Ing. PhD.
   funkcia: výskumný pracovník

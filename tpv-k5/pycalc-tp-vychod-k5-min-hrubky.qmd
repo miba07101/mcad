@@ -10,6 +10,9 @@ format:
    #   fontsize: 0.9em
    #   html-math-method: katex
    # pdf: default
+   # pdf:
+   #   mainfont: Times New Roman
+   #   sansfont: Arial
    # typst: default
 ---
 

@@ -1,54 +1,64 @@
 ---
 report-type: technická správa
-title: Posúdenie stavu materiálu jednotlivých tlakových častí kotla K5 v teplárni východ, Bratislava.
-subtitle: Príloha 4 - Informatívny pevnostný výpočet hrúbok stien tlakových častí kotla K5.
+title: Nazov
+subtitle: Podnazov
 objednavatel:
-    meno: MH Teplárenský holding, a.s.
-    adresa:
-      ulica: Turbínová 3
-      mesto: Bratislava
-      zip: 831 04
+  meno: Meno objednavatela
+  adresa:
+    ulica: ulica
+    mesto: mesto
+    zip: psc
 riesitel:
   meno: Milan Baláž, Ing. PhD.
   funkcia: výskumný pracovník
-  datum: 06.05.2024
+  datum: 00.00.2024
 riesitel2:
-  meno: Vierka alias Big Head, PhDr.
-  funkcia: žopkáč účtovník
-  datum: 06.05.2024
+  meno:
+  funkcia:
+  datum:
 preveril:
   meno: Peter Pastier, Ing.
   funkcia: vedúci odd. mat. a lab.
-  datum: 07.05.2024
+  datum:
 schvalil:
   meno: Peter Brziak, Ing., PhD.
   funkcia: riaditeľ odd. mat. a lab.
-  datum: 08.05.2024
+  datum:
 zakazka:
-  cislo: 222/2205, ME 069
+  cislo: 222/xxxx, ME xxx
 objednavka:
   cislo: 5500008081
-  datum: 14.03.2024
+  datum: 00.00.2024
 format:
-  # pdf:
-    # toc: true
   t-vuz-pdf-pdf: default
 execute:
   echo: false
   code-fold: True
-lang: sk
 ---
+# Úvod
 
-## Introduction
+*TODO* ***Create*** an example file that demonstrates the formatting and features of your format.
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+
+## Druha kapitola
+dnes osm mal pekny den s Vierkou. Bola si trosku poskackat ako zajko
+
+# Kapitola 2
+## Podkapitola 2
+ahoj
+
+ako samas
+```{python}
+print("ahoj Vierka")
+```
+
 
 ## More Information
 
 You can learn more about controlling the appearance of PDF output here: <https://quarto.org/docs/output-formats/pdf-basics.html>
 
 
-### Vstupné údaje
+## Vstupné údaje
 
 ```{python}
 inputs={

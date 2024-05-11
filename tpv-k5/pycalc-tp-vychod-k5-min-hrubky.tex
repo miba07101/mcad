@@ -1,0 +1,261 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+  \setsansfont[]{Arial}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Obsah}
+\else
+  \newcommand\contentsname{Obsah}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Zoznam obrázkov}
+\else
+  \newcommand\listfigurename{Zoznam obrázkov}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Zoznam tabuliek}
+\else
+  \newcommand\listtablename{Zoznam tabuliek}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Obrázok}
+\else
+  \newcommand\figurename{Obrázok}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabuľka}
+\else
+  \newcommand\tablename{Tabuľka}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Výpis}
+\newcommand*\listoflistings{\listof{codelisting}{Zoznam výpisov}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{slovak}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Times New Roman}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={tp-vychod-k5-min-hrubky},
+  pdflang={sk},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{tp-vychod-k5-min-hrubky}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\newpage{}
+
+\subsubsection{Vstupné údaje}\label{vstupnuxe9-uxfadaje}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3134}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0896}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1343}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1194}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1642}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1791}}@{}}
+
+\caption{\label{tbl-inputs}Vstupné údaje}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+od
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+t\_nom
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+p\_op
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+temp\_op
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+material
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+membranova-stena & 57 & 5 & 10 & 315 & 12022 \\
+strop-ohniska & 57 & 5 & 10 & 315 & 12022 \\
+strop-medzitahu & 57 & 5 & 10 & 305 & 12022 \\
+zadna-stena-2-tah & 57 & 5 & 10 & 260 & 12022 \\
+p-l-stena-2-tah & 57 & 5 & 10 & 260 & 12022 \\
+vystupny-prehrievac & 57 & 5 & 10 & 525 & 15128 \\
+salavy-prehrievac & 57 & 5 & 10 & 480 & 15128 \\
+mreza & 57 & 5 & 10 & 325 & 12022 \\
+
+\end{longtable}
+
+\subsubsection{Materiálové
+vlastnosti}\label{materiuxe1lovuxe9-vlastnosti}
+
+\paragraph{Materiál 12022}\label{materiuxe1l-12022}
+
+Teplotný rozsah
+
+$\displaystyle T_{12022} = [20, 100, 200, 250, 300, 350, 400, 450]$
+
+Medza klzu
+
+$\displaystyle R_{p02-12022} = [255, 245, 225, 205, 177, 157, 137, 117]$
+
+Medza pevnosti
+
+$\displaystyle R_{m-12022} = 440$
+
+\subparagraph{Medza pevnosti pri tečení (200 000
+h)}\label{medza-pevnosti-pri-teux10denuxed-200-000-h}
+
+Teplotný rozsah
+
+$\displaystyle T_{t-12022} = [380, 400, 420, 440, 460, 480, 500]$
+
+Medza pevnosti pri tečení
+
+$\displaystyle R_{mt-12022} = [145, 115, 89, 67, 48, 33.4, 24]$
+
+\paragraph{Materiál 15128}\label{materiuxe1l-15128}
+
+Teplotný rozsah
+
+$\displaystyle T_{15128} = [20, 200, 250, 300, 350, 400, 450, 500, 550, 600]$
+
+Medza klzu
+
+$\displaystyle R_{p02-15128} = [365, 319, 304, 294, 279, 265, 245, 226, 206, 181]$
+
+Medza pevnosti
+
+$\displaystyle R_{m-15128} = 490$
+
+\subparagraph{Medza pevnosti pri tečení (200 000
+h)}\label{medza-pevnosti-pri-teux10denuxed-200-000-h-1}
+
+Teplotný rozsah
+
+$\displaystyle T_{t-15128} = [480, 500, 520, 540, 560, 580, 6500]$
+
+Medza pevnosti pri tečení
+
+$\displaystyle R_{mt-15128} = [197, 151, 115, 87, 66, 50, 38]$
+
+
+
+\end{document}
