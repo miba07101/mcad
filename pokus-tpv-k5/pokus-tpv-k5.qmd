@@ -23,6 +23,19 @@ format:
 
 ### Vstupné údaje
 
+### sympy units
+```{python}
+import sympy.physics.units as u
+from IPython.display import display, Math
+a = 5*u.cm
+display(a)
+b = 10*u.pa
+display(b)
+u.pascal
+u.find_unit('temperature')
+```
+
+### efficalc
 ```{python}
 #| echo: true
 #| code-fold: false
@@ -47,7 +60,7 @@ builder = ReportBuilder(calculation)
 ```
 
 ```{=html}
-{{< include /tmp/tmp_8xkcjgd.html >}}
+{{< include tmpkmv56mt4.html >}}
 ```
 
 
