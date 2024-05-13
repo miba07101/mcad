@@ -41,67 +41,8 @@ execute:
 # Vstupné údaje
 
 ```{python}
-inputs={
-  "membranova-stena": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 315,
-    "material" : "12022",
-  },
-  "strop-ohniska": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 315,
-    "material" : "12022",
-  },
-  "strop-medzitahu": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 305,
-    "material" : "12022",
-  },
-  "zadna-stena-2-tah": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 260,
-    "material" : "12022",
-  },
-  "p-l-stena-2-tah": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 260,
-    "material" : "12022",
-  },
-  "vystupny-prehrievac": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 525,
-    "material" : "15128",
-  },
-  "salavy-prehrievac": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 480,
-    "material" : "15128",
-  },
-  "mreza": {
-    "od" : 57,
-    "t_nom" : 5,
-    "p_op" : 10,
-    "temp_op" : 325,
-    "material" : "12022",
-  },
-}
+{{< include _inputs-data.py >}}
 ```
-
-
 
 ```{python}
 #| label: tbl-inputs
@@ -215,4 +156,3 @@ rmt_15128_values = [197, 151, 115, 87, 66, 50, 38]
 latex_output = f"${rmt_15128} = {rmt_15128_values}$"
 display(Math(latex_output))
 ```
-
