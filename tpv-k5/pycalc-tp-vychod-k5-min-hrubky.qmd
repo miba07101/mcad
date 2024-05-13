@@ -5,10 +5,11 @@ execute:
   echo: false
   code-fold: True
 format:
-   # html:
-   #   mainfont: Times New Roman
-   #   fontsize: 0.9em
-   #   html-math-method: katex
+   html:
+     mainfont: Times New Roman
+     fontsize: 0.9em
+     html-math-method: katex
+     # include-after-body: /tmp/tmp_8xkcjgd.html
    # pdf: default
    # pdf:
    #   mainfont: Times New Roman
@@ -21,6 +22,34 @@ format:
 
 
 ### Vstupné údaje
+
+```{python}
+#| echo: true
+#| code-fold: false
+from efficalc import Calculation, Input, Title, sqrt
+
+def calculation():
+    Title("Pythagorean's Theorem and Perimeter")
+
+    a = Input("a", 3, description="Length of side a")
+    b = Input("b", 4, description="Length of side b")
+
+    c = Calculation("c", sqrt(a**2 + b**2), description="Length of the hypotenuse")
+
+    Calculation("P", a + b + c, description="Perimeter of the triangle")
+```
+
+```{python}
+from efficalc.report_builder import ReportBuilder
+
+builder = ReportBuilder(calculation)
+# builder.view_report()
+```
+
+```{=html}
+{{< include /tmp/tmp_8xkcjgd.html >}}
+```
+
 
 ```{python}
 inputs={

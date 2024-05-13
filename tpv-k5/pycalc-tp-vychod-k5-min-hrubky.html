@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sk" xml:lang="sk" style="background-color: #eeeeee;"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.553">
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,7 +114,7 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent">
+<body style="margin-inline: auto; padding: 1rem; background-color: #ffffff;" class="fullcontent">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
@@ -108,14 +142,59 @@ window.Quarto = {
 <div style="page-break-after: always;"></div>
 <section id="vstupné-údaje" class="level3">
 <h3 class="anchored" data-anchor-id="vstupné-údaje">Vstupné údaje</h3>
-<div class="cell" data-execution_count="2" data-tbl-cap-location="top">
-<div id="tbl-inputs" class="cell quarto-float anchored" data-tbl-cap-location="top" data-execution_count="2">
+<div id="b921d7a1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> efficalc <span class="im">import</span> Calculation, Input, Title, sqrt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculation():</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Title(<span class="st">"Pythagorean's Theorem and Perimeter"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> Input(<span class="st">"a"</span>, <span class="dv">3</span>, description<span class="op">=</span><span class="st">"Length of side a"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> Input(<span class="st">"b"</span>, <span class="dv">4</span>, description<span class="op">=</span><span class="st">"Length of side b"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> Calculation(<span class="st">"c"</span>, sqrt(a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>), description<span class="op">=</span><span class="st">"Length of the hypotenuse"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    Calculation(<span class="st">"P"</span>, a <span class="op">+</span> b <span class="op">+</span> c, description<span class="op">=</span><span class="st">"Perimeter of the triangle"</span>)</span></code><button title="Kopírovať do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+    
+    
+    
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            max-width: 850px; 
+        }
+        p {
+            margin-block-start: 0;
+            margin-block-end: 0.5em;
+            line-height: 1.1;
+        }
+        .calc-item {
+            margin-block: 1.5rem;
+        }
+        @media print {
+            body {
+                box-shadow: none;
+                max-width: none;
+            }
+        }
+    </style>
+    
+    
+    <h1>Pythagorean's Theorem and Perimeter</h1><div style="display:flex; flex-direction:row; justify-content:space-between; margin-left: 2rem;"><div style="display: flex; flex-direction: column; justify-content: center;"><div style="display:flex; flex-direction:row; justify-content:flex-start"><p style="width:350px;">Length of side a;</p> <p style="display:inline-block; margin-bottom:1rem; margin-left: 3rem">\( a =  3 \ \mathrm{} \)</p></div></div> <div style="display: flex; flex-direction: column; justify-content: center;"></div></div><div style="display:flex; flex-direction:row; justify-content:space-between; margin-left: 2rem;"><div style="display: flex; flex-direction: column; justify-content: center;"><div style="display:flex; flex-direction:row; justify-content:flex-start"><p style="width:350px;">Length of side b;</p> <p style="display:inline-block; margin-bottom:1rem; margin-left: 3rem">\( b =  4 \ \mathrm{} \)</p></div></div> <div style="display: flex; flex-direction: column; justify-content: center;"></div></div><div class="calc-item"><p style="margin-left: 2rem;">Length of the hypotenuse</p><div style="display:flex; flex-direction:row; justify-content:space-between; margin-left: 2rem;"><div style="display: flex; flex-direction: column; justify-content: center;"><p>\[ \begin{align} c &amp;= \sqrt{ {\left( {a} \right)}^{ {2} } + {\left( {b} \right)}^{ {2} } } = \sqrt{ {\left(  3 \ \mathrm{} \right)}^{  2 \ \mathrm{} } + {\left(  4 \ \mathrm{} \right)}^{  2 \ \mathrm{} } } \\[4pt] &amp; \therefore c =  5 \ \mathrm{} \end{align} \]</p></div> <div style="display: flex; flex-direction: column; justify-content: center;"></div></div></div><div class="calc-item"><p style="margin-left: 2rem;">Perimeter of the triangle</p><div style="display:flex; flex-direction:row; justify-content:space-between; margin-left: 2rem;"><div style="display: flex; flex-direction: column; justify-content: center;"><p>\[ \begin{align} P &amp;= {a} + {b} + {c} =  3 \ \mathrm{} +  4 \ \mathrm{} +  5 \ \mathrm{} \\[4pt] &amp; \therefore P =  12 \ \mathrm{} \end{align} \]</p></div> <div style="display: flex; flex-direction: column; justify-content: center;"></div></div></div>
+    
+    
+    
+
+<div class="cell" data-execution_count="4" data-tbl-cap-location="top">
+<div id="tbl-inputs" class="cell quarto-float anchored" data-execution_count="4" data-tbl-cap-location="top">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabuľka&nbsp;1: Vstupné údaje
 </figcaption>
 <div aria-describedby="tbl-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="80">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="49">
 <table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 31%">
@@ -213,19 +292,19 @@ Tabuľka&nbsp;1: Vstupné údaje
 <section id="materiál-12022" class="level4">
 <h4 class="anchored" data-anchor-id="materiál-12022">Materiál 12022</h4>
 <p>Teplotný rozsah</p>
-<div id="140cf157" class="cell" data-execution_count="4">
+<div id="877efb27" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle T_{12022} = [20, 100, 200, 250, 300, 350, 400, 450]</span></p>
 </div>
 </div>
 <p>Medza klzu</p>
-<div id="6455b782" class="cell" data-execution_count="5">
+<div id="d975961c" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{p02-12022} = [255, 245, 225, 205, 177, 157, 137, 117]</span></p>
 </div>
 </div>
 <p>Medza pevnosti</p>
-<div id="6ba3bb7c" class="cell" data-execution_count="6">
+<div id="eab7e4dc" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{m-12022} = 440</span></p>
 </div>
@@ -233,13 +312,13 @@ Tabuľka&nbsp;1: Vstupné údaje
 <section id="medza-pevnosti-pri-tečení-200-000-h" class="level5">
 <h5 class="anchored" data-anchor-id="medza-pevnosti-pri-tečení-200-000-h">Medza pevnosti pri tečení (200 000 h)</h5>
 <p>Teplotný rozsah</p>
-<div id="4cd8aeee" class="cell" data-execution_count="7">
+<div id="ec40116d" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle T_{t-12022} = [380, 400, 420, 440, 460, 480, 500]</span></p>
 </div>
 </div>
 <p>Medza pevnosti pri tečení</p>
-<div id="a712bcd5" class="cell" data-execution_count="8">
+<div id="e58ed2c9" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{mt-12022} = [145, 115, 89, 67, 48, 33.4, 24]</span></p>
 </div>
@@ -249,19 +328,19 @@ Tabuľka&nbsp;1: Vstupné údaje
 <section id="materiál-15128" class="level4">
 <h4 class="anchored" data-anchor-id="materiál-15128">Materiál 15128</h4>
 <p>Teplotný rozsah</p>
-<div id="cdfee028" class="cell" data-execution_count="9">
+<div id="b1a114d6" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle T_{15128} = [20, 200, 250, 300, 350, 400, 450, 500, 550, 600]</span></p>
 </div>
 </div>
 <p>Medza klzu</p>
-<div id="0271cda0" class="cell" data-execution_count="10">
+<div id="56c03d30" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{p02-15128} = [365, 319, 304, 294, 279, 265, 245, 226, 206, 181]</span></p>
 </div>
 </div>
 <p>Medza pevnosti</p>
-<div id="f82e69c5" class="cell" data-execution_count="11">
+<div id="b99c0dec" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{m-15128} = 490</span></p>
 </div>
@@ -269,13 +348,13 @@ Tabuľka&nbsp;1: Vstupné údaje
 <section id="medza-pevnosti-pri-tečení-200-000-h-1" class="level5">
 <h5 class="anchored" data-anchor-id="medza-pevnosti-pri-tečení-200-000-h-1">Medza pevnosti pri tečení (200 000 h)</h5>
 <p>Teplotný rozsah</p>
-<div id="dd83c07d" class="cell" data-execution_count="12">
+<div id="d2a1ef55" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle T_{t-15128} = [480, 500, 520, 540, 560, 580, 6500]</span></p>
 </div>
 </div>
 <p>Medza pevnosti pri tečení</p>
-<div id="1268e515" class="cell" data-execution_count="13">
+<div id="e3d9d46d" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math inline">\displaystyle R_{mt-15128} = [197, 151, 115, 87, 66, 50, 38]</span></p>
 </div>

@@ -1,5 +1,7 @@
 
-$-- Implements the frontmatter, title page, and abstract.
+% ------------------
+% Implements the frontmatter, title page, and abstract.
+% ------------------
 
 $if(has-frontmatter)$
   \begin{frontmatter}
@@ -13,17 +15,19 @@ $else$
   \end{titlepage}
 $endif$
 
+% ------------------
+% Header
+% ------------------
 
-
-% add the short title to the fancy header
 $if(zakazka)$
 \fancyhead[L]{Z. č: $zakazka.cislo$}
 $endif$
-$if(zakazka)$
 \fancyhead[R]{List: \thepage/\pageref{LastPage}}
-$endif$
 
+% ------------------
 % Table of Contents
+% ------------------
+
 \newpage
  \tableofcontents
 \newpage
