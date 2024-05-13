@@ -1,0 +1,34 @@
+
+% ------------------
+% Implements the frontmatter, title page, and abstract.
+% ------------------
+
+$if(has-frontmatter)$
+  \begin{frontmatter}
+  \begin{titlepage}
+  $titlepage.tex()$
+  \end{titlepage}
+  \end{frontmatter}
+$else$
+  \begin{titlepage}
+  $titlepage.tex()$
+  \end{titlepage}
+$endif$
+
+% ------------------
+% Header
+% ------------------
+
+$if(zakazka)$
+\fancyhead[L]{Z. č: $zakazka.cislo$}
+$endif$
+\fancyhead[R]{List: \thepage/\pageref{LastPage}}
+
+% ------------------
+% Table of Contents
+% ------------------
+
+\newpage
+ \tableofcontents
+\newpage
+

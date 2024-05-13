@@ -1,0 +1,50 @@
+title: T-vuz-pdf
+author: miba07101
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    pdf:
+      documentclass: scrartcl
+      # documentclass: article
+      papersize: a4
+      fontsize: 12pt
+      lang: sk
+      number-sections: true
+      number-depth: 3
+      colorlinks: false
+      # block-headings: false # ak documentclass: article to deal with titlesec problems
+      mainfont: "Times New Roman"
+      mainfontoptions:
+        - Path=/mnt/c/Windows/Fonts/,
+        - Extension=.ttf,
+        - UprightFont=times,
+        - BoldFont=timesbd,
+        - ItalicFont=timesi,
+        - BoldItalicFont=timesbi
+      sansfont: "Arial"
+      sansfontoptions:
+        - Path=/mnt/c/Windows/Fonts/,
+        - Extension=.ttf,
+        - UprightFont=arial,
+        - BoldFont=arialbd
+        - ItalicFont=ariali,
+        - BoldItalicFont=arialbi
+      monofont: "Times New Roman"
+      monofontoptions:
+        - Path=/mnt/c/Windows/Fonts/,
+        - Extension=.ttf,
+        - UprightFont=times,
+        - BoldFont=timesbd
+        - ItalicFont=timesi,
+        - BoldItalicFont=timesbi
+      mathfont: texgyretermes-math.otf
+      # mathfont: texgyredejavu-math.otf
+      # mathfont: texgyrepagella-math.otf
+      mathfontoptions:
+        - Path=/mnt/c/Users/vimi/AppData/Local/Microsoft/Windows/Fonts/,
+      include-in-header: in-header.tex
+      template-partials:
+        - "partials/before-body.tex"
+        - "partials/titlepage.tex"
+
