@@ -1,0 +1,20 @@
+title: T-vuz-html
+author: miba07101
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    html:
+      lang: sk
+      css: styles.css
+      # theme: [yeti, custom.scss]
+      # include-in-header:
+      #   - text: |
+      #       <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+      #       <style>@page{size: A4; @top-right{content:'List: ' counter(page) ' z ' counter(pages)}}</style>
+      include-in-header:
+        - text: |
+            <style>@media print {.pagebreak {page-break-after: always;}}</style>
+      include-before-body:
+        - "titlepage.html"
+

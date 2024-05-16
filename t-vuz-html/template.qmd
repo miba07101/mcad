@@ -1,0 +1,207 @@
+---
+title: Untitled
+format:
+  t-vuz-html-html: default
+execute:
+  echo: false
+  code-fold: True
+---
+
+## Introduction
+
+*TODO* Create an example file that demonstrates the formatting and features of your format.
+
+{{< pagebreak >}}
+
+
+### Vstupné údaje
+
+### sympy units
+```{python}
+import sympy.physics.units as u
+from IPython.display import display, Math
+a = 5*u.cm
+display(a)
+b = 10*u.pa
+display(b)
+u.pascal
+u.find_unit('temperature')
+```
+
+
+```{python}
+inputs={
+  "membranova-stena": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 315,
+    "material" : "12022",
+  },
+  "strop-ohniska": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 315,
+    "material" : "12022",
+  },
+  "strop-medzitahu": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 305,
+    "material" : "12022",
+  },
+  "zadna-stena-2-tah": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 260,
+    "material" : "12022",
+  },
+  "p-l-stena-2-tah": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 260,
+    "material" : "12022",
+  },
+  "vystupny-prehrievac": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 525,
+    "material" : "15128",
+  },
+  "salavy-prehrievac": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 480,
+    "material" : "15128",
+  },
+  "mreza": {
+    "od" : 57,
+    "t_nom" : 5,
+    "p_op" : 10,
+    "temp_op" : 325,
+    "material" : "12022",
+  },
+}
+```
+
+
+
+```{python}
+#| label: tbl-inputs
+#| tbl-cap: Vstupné údaje
+#| tbl-cap-location: top
+
+from IPython.display import Markdown
+from tabulate import tabulate
+import pandas as pd
+
+# df = pd.DataFrame.from_dict(inputs, orient='index').reset_index(drop=True)
+df = pd.DataFrame.from_dict(inputs, orient='index')
+
+# print(df.to_markdown(index=True))
+Markdown(tabulate(df, headers="keys", tablefmt="github"))
+```
+
+
+### Materiálové vlastnosti
+
+```{python}
+import sympy as sy
+# sy.init_printing()
+from IPython.display import display, Math
+```
+
+#### Materiál 12022
+
+Teplotný rozsah
+```{python}
+t_12022=sy.var('T_{12022}')
+t_12022_values = [20,100,200,250,300,350,400,450]
+# Format the output in LaTeX
+latex_output = f"${t_12022} = {t_12022_values}$"
+# Render the LaTeX expression as a math equation
+display(Math(latex_output))
+```
+
+Medza klzu
+```{python}
+rp02_12022=sy.var('R_{p02-12022}')
+rp02_12022_values = [255, 245, 225, 205, 177, 157, 137, 117]
+latex_output = f"${rp02_12022} = {rp02_12022_values}$"
+display(Math(latex_output))
+```
+
+Medza pevnosti
+```{python}
+rm_12022=sy.var('R_{m-12022}')
+rm_12022_values = 440
+latex_output = f"${rm_12022} = {rm_12022_values}$"
+display(Math(latex_output))
+```
+
+##### Medza pevnosti pri tečení (200 000 h)
+Teplotný rozsah
+```{python}
+tt_12022=sy.var('T_{t-12022}')
+tt_12022_values = [380, 400, 420, 440, 460, 480, 500]
+latex_output = f"${tt_12022} = {tt_12022_values}$"
+display(Math(latex_output))
+```
+
+Medza pevnosti pri tečení
+```{python}
+rmt_12022=sy.var('R_{mt-12022}')
+rmt_12022_values = [145, 115, 89, 67, 48, 33.4, 24]
+latex_output = f"${rmt_12022} = {rmt_12022_values}$"
+display(Math(latex_output))
+```
+
+#### Materiál 15128
+
+Teplotný rozsah
+```{python}
+t_15128=sy.var('T_{15128}')
+t_15128_values = [20, 200, 250, 300, 350, 400, 450, 500, 550, 600]
+latex_output = f"${t_15128} = {t_15128_values}$"
+display(Math(latex_output))
+```
+
+Medza klzu
+```{python}
+rp02_15128=sy.var('R_{p02-15128}')
+rp02_15128_values = [365, 319, 304, 294, 279, 265, 245, 226, 206, 181]
+latex_output = f"${rp02_15128} = {rp02_15128_values}$"
+display(Math(latex_output))
+```
+
+Medza pevnosti
+```{python}
+rm_15128=sy.var('R_{m-15128}')
+rm_15128_values = 490
+latex_output = f"${rm_15128} = {rm_15128_values}$"
+display(Math(latex_output))
+```
+
+##### Medza pevnosti pri tečení (200 000 h)
+Teplotný rozsah
+```{python}
+tt_15128=sy.var('T_{t-15128}')
+tt_15128_values = [480, 500, 520, 540, 560, 580,6500]
+latex_output = f"${tt_15128} = {tt_15128_values}$"
+display(Math(latex_output))
+```
+
+Medza pevnosti pri tečení
+```{python}
+rmt_15128=sy.var('R_{mt-15128}')
+rmt_15128_values = [197, 151, 115, 87, 66, 50, 38]
+latex_output = f"${rmt_15128} = {rmt_15128_values}$"
+display(Math(latex_output))
+```
+
