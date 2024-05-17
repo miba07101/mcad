@@ -1,0 +1,13 @@
+---
+title: Nazov
+format:
+  t-vuz-html-html: default
+execute:
+  echo: false
+  code-fold: True
+---
+
+# Úvod {.unnumbered}
+
+# Vstupné údaje
+

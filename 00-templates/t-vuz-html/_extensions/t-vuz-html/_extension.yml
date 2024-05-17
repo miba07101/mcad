@@ -1,0 +1,19 @@
+title: T-vuz-html
+author: miba07101
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    html:
+      lang: sk
+      fontsize: 12pt
+      # mainfont: Times New Roman
+      # mainfont: Ubuntu
+      number-sections: true
+      number-depth: 3
+      html-math-method: plain # aby fungovalo latex zobrazenie rovnic pri pouziti paged.js scriptu
+      css: styles.css
+      # include-in-header:
+      #   - text: |
+      #       <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+
