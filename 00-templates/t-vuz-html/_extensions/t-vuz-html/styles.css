@@ -3,10 +3,10 @@
 /* } */
 
 @page {
-  margin-top: 20mm;
-  margin-bottom: 20mm;
-  margin-left: 20mm;
-  margin-right: 20mm;
+  margin-top: 15mm;
+  margin-bottom: 15mm;
+  margin-left: 15mm;
+  margin-right: 15mm;
   @bottom-center {
     content: counter(page);
   }
@@ -32,3 +32,12 @@ h2,
 .table {
   --bs-table-striped-bg: white;
 }
+
+/* @media print { */
+/*   @page { */
+/*     counter-increment: page; */
+/*     @bottom-center { */
+/*       content: counter(page); */
+/*     } */
+/*   } */
+/* } */

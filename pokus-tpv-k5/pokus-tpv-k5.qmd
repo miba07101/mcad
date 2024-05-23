@@ -15,6 +15,7 @@ format:
    #   mainfont: Times New Roman
    #   sansfont: Arial
    # typst: default
+jupyter: python3
 ---
 
 
@@ -126,13 +127,12 @@ inputs={
 ```
 
 
-
 ```{python}
 #| label: tbl-inputs
 #| tbl-cap: Vstupné údaje
 #| tbl-cap-location: top
 
-from IPython.display import Markdown
+from IPython.display import Markdown, display
 from tabulate import tabulate
 import pandas as pd
 
@@ -140,7 +140,9 @@ import pandas as pd
 df = pd.DataFrame.from_dict(inputs, orient='index')
 
 # print(df.to_markdown(index=True))
-Markdown(tabulate(df, headers="keys", tablefmt="github"))
+Markdown(tabulate(df, headers="keys", tablefmt="simple"))
+# Markdown(tabulate(df, headers="keys"))
+# display(Markdown(df.to_markdown()))
 ```
 
 
